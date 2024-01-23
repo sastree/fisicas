@@ -8,15 +8,44 @@
         * {
             padding: 0;
             margin: 0;
+            font-family:Arial, Helvetica, sans-serif;
         }
         body {
             height: 100vh;
             width: 100%;
+            overflow: hidden; /* Evita el desplazamiento vertical */
+            position: relative; /* Establece el contexto de apilamiento para el hijo absoluto */
+        }
+        spline-viewer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Coloca el spline-viewer detrás del contenido del body */
+        }
+        .cuerpo {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            flex-direction: column;
+        }
+        h1 {
+            font-size: 100px;
+            color: white;
         }
     </style>
 </head>
 <body>
     <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.33/build/spline-viewer.js"></script>
-<spline-viewer loading-anim-type="spinner-small-light" url="https://prod.spline.design/atPHHMjLda4Cx9HY/scene.splinecode"></spline-viewer>
+    <spline-viewer loading-anim-type="spinner-small-light" url="https://prod.spline.design/atPHHMjLda4Cx9HY/scene.splinecode"></spline-viewer>
+    <!-- Tu contenido adicional aquí -->
+    <section class="cuerpo">
+        <div class="texto">
+            <h1>Caja de Bolas</h1>
+        </div>
+    </section>
 </body>
 </html>
